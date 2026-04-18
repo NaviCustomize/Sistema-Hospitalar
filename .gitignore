@@ -1,0 +1,53 @@
+# ==========================================
+# 1. Arquivos Compilados e de Build (Java)
+# ==========================================
+*.class
+*.jar
+*.war
+*.ear
+
+# Diretórios de build de gerenciadores de pacotes (Maven / Gradle)
+target/
+build/
+out/
+.gradle/
+
+# ==========================================
+# 2. Configurações de IDEs (Editores de Código)
+# ==========================================
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.metadata
+bin/
+.settings/
+.classpath
+.project
+*.tmp
+*.bak
+
+# VS Code
+.vscode/
+
+# ==========================================
+# 3. Credenciais de Banco de Dados e Segredos
+# ==========================================
+# NUNCA envie senhas do seu banco para o repositório!
+.env
+.env.local
+.env.development
+application-dev.properties
+application-secret.yml
+secrets.json
+db_credentials.xml
+
+# ==========================================
+# 4. Logs e Arquivos do Sistema Operacional
+# ==========================================
+*.log
+.DS_Store
+Thumbs.db
