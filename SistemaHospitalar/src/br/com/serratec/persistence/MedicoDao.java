@@ -38,4 +38,19 @@ public class MedicoDao {
         return medicos;
     }
 
+    public void inserirMedico(Medico medico){
+        String postgresql = "insert into medico (nome, especialidade, CRM) values (?, ?, ?);";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(postgresql);
+            stmt.setString(1, medico.getNome());
+            stmt.setString(2, medico.getEspecialidade());
+            stmt.setString(3, medico.getCrm());
+            stmt.execute();
+            stmt.close();
+            connection.close();
+        } catch (SQLException e){
+            System.out.println("Medico não inserido!");
+        }
+    }
+
 }

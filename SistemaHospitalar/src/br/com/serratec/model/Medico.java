@@ -6,7 +6,7 @@ public class Medico {
     private String especialidade;
     private String CRM;
 
-    public Medico(int id, String nome, String especialidade, String crm) {
+    public Medico(Integer id, String nome, String especialidade, String crm) {
         this.id = id;
         this.nome = nome;
         this.especialidade = especialidade;
