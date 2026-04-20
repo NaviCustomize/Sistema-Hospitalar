@@ -1,9 +1,9 @@
-package br.com.serratec.conexao;
+package br.com.SistemaHospitalar.conexao;
 
 import java.util.Scanner;
 
-import br.com.serratec.model.Medico;
-import br.com.serratec.persistence.MedicoDao;
+import br.com.SistemaHospitalar.model.Medico;
+import br.com.SistemaHospitalar.persistence.MedicoDao;
 
 public class TesteInserirMedicoDao {
     public static void main(String[] args) {

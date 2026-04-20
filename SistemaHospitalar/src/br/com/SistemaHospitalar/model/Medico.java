@@ -1,4 +1,4 @@
-package br.com.serratec.model;
+package br.com.SistemaHospitalar.model;
 
 public class Medico {
     private Integer id;

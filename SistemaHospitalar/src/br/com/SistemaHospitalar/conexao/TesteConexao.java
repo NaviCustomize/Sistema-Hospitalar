@@ -1,4 +1,4 @@
-package br.com.serratec.conexao;
+package br.com.SistemaHospitalar.conexao;
 
 public class TesteConexao {
     public static void main(String[] args) {

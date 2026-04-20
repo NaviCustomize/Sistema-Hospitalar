@@ -1,4 +1,4 @@
-package br.com.serratec.conexao;
+package br.com.SistemaHospitalar.conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

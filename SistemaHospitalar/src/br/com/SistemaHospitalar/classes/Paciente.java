@@ -1,4 +1,5 @@
-import br.com.serratec.model.Medico;
+package br.com.SistemaHospitalar.classes;
+import br.com.SistemaHospitalar.model.Medico;
 
 public class Paciente {
     private Integer id;
@@ -15,7 +16,7 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente [id=" + id + ", CPF=" + CPF + ", nome=" + nome + ", medico=" + medico + "]";
+        return "Paciente id=" + id + ", CPF=" + CPF + ", nome=" + nome + ", medico=" + medico;
     }
 
     public Integer getId() {
