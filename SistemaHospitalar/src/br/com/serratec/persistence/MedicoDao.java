@@ -47,9 +47,11 @@ public class MedicoDao {
             stmt.setString(3, medico.getCrm());
             stmt.execute();
             stmt.close();
+            System.out.println("Medico inserido.");
             connection.close();
         } catch (SQLException e){
             System.out.println("Medico não inserido!");
+            e.printStackTrace();
         }
     }
 
