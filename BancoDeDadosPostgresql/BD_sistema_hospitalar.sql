@@ -4,18 +4,24 @@ create table if not exists plano_de_saude(
 	
 	id_plano_saude serial primary key,
 	nome_convenio varchar(60) not null unique,
-	telefone int not null,
+	telefone text not null,
 	cobertura cobertura not null
 );
+
+alter table plano_de_saude
+alter column telefone set data type text;
 
 create table if not exists hospital(
 	id_hospital serial primary key,
 	cnpj char(14) not null unique,
 	nome_hospital varchar(100) not null unique,
-	telefone int not null,
+	telefone text not null,
 	email varchar(200) not null,
 	endereco varchar(200) not null
 );
+
+alter table hospital
+alter column telefone set data type text;
 
 create table if not exists credenciamento(
 	id_credenciamento serial primary key,
@@ -40,13 +46,16 @@ create type turno_enfermeira as enum ('manha','tarde','noite');
 create table if not exists enfermeira(
 	id_enfermeira serial primary key,
 	id_ala int not null,
-	id_enfermeira_chefe int not null,
+	id_enfermeira_chefe int,
 	cre char(20) not null unique,
 	turno turno_enfermeira not null,
 	nome_enfermeira varchar(150) not null,
 	constraint fk_ala foreign key (id_ala) references ala(id_ala),
 	constraint fk_enfermeira_chefe foreign key (id_enfermeira_chefe) references enfermeira(id_enfermeira) on delete set null 
 );
+
+alter table enfermeira
+alter column id_enfermeira_chefe drop not null;
 
 create type status_leito as enum ('ocupado','livre','em_manutencao');
 
@@ -62,9 +71,15 @@ create table if not exists paciente(
 	nome_paciente varchar(150) not null,
 	documento char(14) not null,
 	endereco varchar(200) not null,
-	telefone int,
-	data_nasciemento date not null
+	telefone text,
+	data_nascimento date not null
 );
+
+alter table paciente
+rename column data_nasciemento to data_nascimento;
+
+alter table paciente
+alter column telefone set data type text;
 
 create table if not exists internacao(
 	id_internacao serial primary key,
