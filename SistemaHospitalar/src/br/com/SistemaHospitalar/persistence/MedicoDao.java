@@ -54,5 +54,4 @@ public class MedicoDao {
             e.printStackTrace();
         }
     }
-
 }
