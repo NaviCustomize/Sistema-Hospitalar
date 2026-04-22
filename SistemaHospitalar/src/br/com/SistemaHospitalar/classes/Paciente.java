@@ -1,5 +1,4 @@
 package br.com.SistemaHospitalar.classes;
-import br.com.SistemaHospitalar.model.Medico;
 
 public class Paciente {
     private Integer id;

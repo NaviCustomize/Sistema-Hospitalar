@@ -1,4 +1,4 @@
-package br.com.SistemaHospitalar.model;
+package br.com.SistemaHospitalar.classes;
 
 public class Medico {
     private Integer id;
