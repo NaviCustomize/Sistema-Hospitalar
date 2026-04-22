@@ -1,21 +1,3 @@
-# Diretórios de build de gerenciadores de pacotes (Maven / Gradle)
-target/
-build/
-out/
-.gradle/
-
-# ==========================================
-# 2. Configurações de IDEs (Editores de Código)
-# ==========================================
-# IntelliJ IDEA
-.idea/
-*.iws
-*.iml
-*.ipr
-
-# VS Code
-.vscode/
-
 # ==========================================
 # 3. Credenciais de Banco de Dados e Segredos
 # ==========================================
