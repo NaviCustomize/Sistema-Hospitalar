@@ -92,7 +92,9 @@ create table if not exists internacao(
 	constraint fk_leito foreign key (id_leito) references leito(id_leito)
 );
 
-create type forma_pagamento as enum ('pendente','em_analise','pago','cancelado');
+create type status_pagamento as enum ('pendente','em_analise','pago','cancelado');
+
+alter type forma_pagamento rename to status_pagamento;
 
 create table if not exists fatura(
 	id_fatura serial primary key,
@@ -101,10 +103,14 @@ create table if not exists fatura(
 	data_emissao date,
 	data_vencimento date,
 	forma_pagamento varchar(60),
-	status_pagamento forma_pagamento default 'pendente',
+	status_pagamento status_pagamento default 'pendente',
 	constraint chk_datas_fatura check (data_vencimento >= data_emissao),
 	constraint fk_paciente foreign key (id_paciente) references paciente(id_paciente)
 );
+
+select * from fatura;
+
+select "forma_pagamento" from fatura;
 
 create table if not exists nota_fiscal(
 	id_nota_fiscal serial primary key,
@@ -118,6 +124,8 @@ create table if not exists nota_fiscal(
 	forma_pagamento varchar(60) not null,
 	constraint fk_fatura foreign key (id_fatura) references fatura(id_fatura)
 );
+
+select * from nota_fiscal nf;
 
 create table if not exists medico(
 	id_medico serial primary key,

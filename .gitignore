@@ -34,3 +34,4 @@ db_credentials.xml
 *.log
 .DS_Store
 Thumbs.db
+/.metadata/
