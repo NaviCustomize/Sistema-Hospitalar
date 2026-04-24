@@ -17,7 +17,7 @@ public class NotaFiscalDao {
         connection = new ConnectionFactory().getConnection();
     }
 
-    public List<NotaFiscal> gerar10NotaFiscal(NotaFiscal nota) {
+    public NotaFiscal gerarNotaFiscal(NotaFiscal nota) {
         String sql1 = "Select * from sistema_hospitalar.fatura";
         String sql2 = "Insert into sistema_hospitalar.nota_fiscal (id_fatura, valor_pis, valor_cofins, valor_iss, valor_irpj, valor_csll, valor_total, forma_pagamento) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         List<NotaFiscal> notasFiscais = new ArrayList<>();

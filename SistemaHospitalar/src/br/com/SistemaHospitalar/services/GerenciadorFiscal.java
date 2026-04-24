@@ -33,4 +33,22 @@ public class GerenciadorFiscal implements ICalculoImposto {
     public BigDecimal calcularCSLL(BigDecimal v) {
         return v.multiply(new BigDecimal("0.0108")).setScale(2, RoundingMode.HALF_UP);
     }
+
+    public void exportarCSV(NotaFiscal nf) throws IOException {
+
+        String nomeArq = "NotaFiscal_" + nf.getFatura().getId() + ".csv";
+        try (PrintWriter writer = new PrintWriter(new FileWriter(nomeArq))) {
+            // Formato de saída: <Nome>;<valor>;<iss>;<pis>;<cofins>;<irpj>;<csll>
+            writer.printf(Locale.US, "%s;%.2f;%.2f;%.2f;%.2f;%.2f;%.2f",
+                nf.getFatura().getPaciente().getNome(),
+                nf.getFatura().getValor_fatura(),
+                nf.getIss(), nf.getPis(), nf.getCofins(), nf.getIrpj(), nf.getCsll());
+
+        System.out.println(">> Arquivo CSV gerado com sucesso: " + nomeArq + " <<\n");
+
+        } catch (IOException erro) {
+            System.err.println("Erro de Sistema: Falha ao acessar o disco para gravar o arquivo.");
+            System.err.println("Detalhe técnico: " + erro.getMessage());
+        }
+    }
 }

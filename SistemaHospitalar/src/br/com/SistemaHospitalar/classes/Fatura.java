@@ -64,31 +64,4 @@ public class Fatura {
 		return statusFatura;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
-
-	public void setValor_fatura(BigDecimal valor_fatura) {
-		this.valor_fatura = valor_fatura;
-	}
-
-	public void setData_emissao(LocalDate data_emissao) {
-		this.data_emissao = data_emissao;
-	}
-
-	public void setData_vencimento(LocalDate data_vencimento) {
-		this.data_vencimento = data_vencimento;
-	}
-
-	public void setForma_pagamento(String forma_pagamento) {
-		this.forma_pagamento = forma_pagamento;
-	}
-
-	public void setStatusFatura(StatusFatura statusFatura) {
-		this.statusFatura = statusFatura;
-	}
 }
