@@ -7,22 +7,19 @@ public class Leito {
     private StatusLeito statusLeito;
     private Ala ala;
 
-    public Leito(Integer id, StatusLeito statusLeito, Ala ala) {
-        this.id = id;
-        this.statusLeito = statusLeito;
-        this.ala = ala;
+    @Override
+    public String toString() {
+        return "Leito [id=" + id + ", statusLeito=" + statusLeito + ", ala=" + ala + "]";
     }
 
     public Integer getId() {
         return id;
     }
-
     public StatusLeito getStatusLeito() {
         return statusLeito;
     }
-
     public Ala getAla() {
         return ala;
     }
-
+ 
 }
