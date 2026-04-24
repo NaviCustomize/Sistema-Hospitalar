@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 public class NotaFiscal {
 
     private Integer id;
-    Hospital hospital;
     private Fatura fatura;
     private String forma_pagamento;
     private BigDecimal iss;
@@ -14,12 +13,9 @@ public class NotaFiscal {
     private BigDecimal irpj;
     private BigDecimal csll;
     
-    
-
-    public NotaFiscal(Integer id, Hospital hospital, Fatura fatura, String forma_pagamento, BigDecimal iss,
-            BigDecimal pis, BigDecimal cofins, BigDecimal irpj, BigDecimal csll) {
+    public NotaFiscal(Integer id, Fatura fatura, String forma_pagamento, BigDecimal iss, BigDecimal pis,
+            BigDecimal cofins, BigDecimal irpj, BigDecimal csll) {
         this.id = id;
-        this.hospital = hospital;
         this.fatura = fatura;
         this.forma_pagamento = forma_pagamento;
         this.iss = iss;
@@ -51,10 +47,6 @@ public class NotaFiscal {
         return id;
     }
 
-    public Hospital getHospital() {
-        return hospital;
-    }
-
     public Fatura getFatura() {
         return fatura;
     }
@@ -82,7 +74,5 @@ public class NotaFiscal {
     public BigDecimal getCsll() {
         return csll;
     }
-
-    
 
 }
