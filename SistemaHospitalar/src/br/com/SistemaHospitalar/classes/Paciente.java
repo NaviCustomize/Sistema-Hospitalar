@@ -36,4 +36,21 @@ public class Paciente {
     public Medico getMedico() {
         return medico;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setCPF(String cPF) {
+        CPF = cPF;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
 }

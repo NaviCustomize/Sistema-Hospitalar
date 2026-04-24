@@ -1,13 +1,9 @@
 package br.com.SistemaHospitalar.classes;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import br.com.SistemaHospitalar.conexao.ConnectionFactory;
 import br.com.SistemaHospitalar.enums.StatusFatura;
 import br.com.SistemaHospitalar.exception.FaturaNaoEncontradaException;
@@ -72,7 +68,7 @@ public class SistemaHospitalarMain {
 
                         case 0:
                             System.out.println("\nFinalizando sistema hospitalar... Até logo!");
-                            break;
+                            return;
 
                         default:
                             System.out.println("\n[AVISO] Opcao invalida! Escolha entre 0, 1 ou 2.");
@@ -147,10 +143,10 @@ public class SistemaHospitalarMain {
          */
         private static Fatura realizarBuscaDeFaturaNoBanco(Connection conexao, int idFatura) throws SQLException {
             
-            String sqlBusca = "SELECT f.*, p.nome AS nome_paciente, p.cpf AS cpf_paciente " +
-                            "FROM fatura f " +
-                            "INNER JOIN paciente p ON f.paciente_id = p.id " +
-                            "WHERE f.id = ?";
+            String sqlBusca = "SELECT f.*, p.nome_paciente AS nome_paciente, p.documento AS documento_paciente " +
+                            "FROM sistema_hospitalar.fatura f " +
+                            "INNER JOIN sistema_hospitalar.paciente p ON f.id_paciente = p.id_paciente " +
+                            "WHERE f.id_fatura = ?";
             
             try (PreparedStatement declaracaoSQL = conexao.prepareStatement(sqlBusca)) {
                 
@@ -161,12 +157,12 @@ public class SistemaHospitalarMain {
                     // Instancia o paciente com os dados do banco
                     Paciente pacienteEncontrado = new Paciente(
                             resultado.getString("nome_paciente"), 
-                            resultado.getString("cpf_paciente")
+                            resultado.getString("documento_paciente")
                     );
 
                     // Retorna a fatura preenchida
                     return new Fatura(
-                        resultado.getInt("id"),
+                        resultado.getInt("id_fatura"),
                         pacienteEncontrado,
                         resultado.getBigDecimal("valor_fatura"),
                         resultado.getDate("data_emissao").toLocalDate(),
@@ -184,7 +180,7 @@ public class SistemaHospitalarMain {
          */
         private static void gravarNotaFiscalNoBanco(Connection conexao, NotaFiscal nota) throws SQLException {
             
-            String sqlInsert = "INSERT INTO nota_fiscal (fatura_id, forma_pagamento, iss, pis, cofins, irpj, csll) " +
+            String sqlInsert = "INSERT INTO sistema_hospitalar.nota_fiscal (id_fatura, forma_pagamento, iss, pis, cofins, irpj, csll) " +
                             "VALUES (?, ?, ?, ?, ?, ?, ?)";
             
             try (PreparedStatement declaracaoSQL = conexao.prepareStatement(sqlInsert)) {
