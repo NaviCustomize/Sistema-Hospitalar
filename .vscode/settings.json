@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\livia\\OneDrive\\Documentos\\Leandro\\Residência Serratec TIC - 2026.1\\POO Apostila e Exercícios de Java\\postgresql-42.7.10.jar"
+    ]
+}

@@ -1,6 +1,7 @@
 package br.com.SistemaHospitalar.services;
 
 import br.com.SistemaHospitalar.interfaces.ICalculoImposto;
+import br.com.SistemaHospitalar.classes.Fatura;
 import br.com.SistemaHospitalar.classes.NotaFiscal;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -34,6 +35,11 @@ public class GerenciadorFiscal implements ICalculoImposto {
         return v.multiply(new BigDecimal("0.0108")).setScale(2, RoundingMode.HALF_UP);
     }
 
+    public NotaFiscal gerarNota(Fatura fatura, int i) {
+        
+        throw new UnsupportedOperationException("Unimplemented method 'gerarNota'");
+    }
+
     public void exportarCSV(NotaFiscal nf) throws IOException {
 
         String nomeArq = "NotaFiscal_" + nf.getFatura().getId() + ".csv";
@@ -49,6 +55,7 @@ public class GerenciadorFiscal implements ICalculoImposto {
         } catch (IOException erro) {
             System.err.println("Erro de Sistema: Falha ao acessar o disco para gravar o arquivo.");
             System.err.println("Detalhe técnico: " + erro.getMessage());
+            erro.printStackTrace();
         }
     }
 }

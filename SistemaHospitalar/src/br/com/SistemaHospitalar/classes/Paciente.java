@@ -13,6 +13,9 @@ public class Paciente {
         this.medico = medico;
     }
 
+    public Paciente(String string, String string2) {
+    }
+
     @Override
     public String toString() {
         return "Paciente id=" + id + ", CPF=" + CPF + ", nome=" + nome + ", medico=" + medico;

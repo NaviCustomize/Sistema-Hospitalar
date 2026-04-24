@@ -1,9 +1,10 @@
-package br.com.SistemaHospitalar.conexao;
+/*package br.com.SistemaHospitalar.conexao;
+
+import java.sql.SQLException;
 
 public class TesteConexao {
-    public static void main(String[] args) {
-        ConnectionFactory factory = new ConnectionFactory();
-
-       factory.getConnection();
+    public static void main(String[] args) throws SQLException {
+        ConnectionFactory.getConnection();
     }
 }
+*/

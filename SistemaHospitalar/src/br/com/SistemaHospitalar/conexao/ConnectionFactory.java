@@ -5,27 +5,26 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    private String url = "jdbc:postgresql://ep-late-unit-ac2y5sui.sa-east-1.aws.neon.tech:5432/neondb";
-    private String usuario = "neondb_owner";
-    private String senha = "npg_eMyZ8gPD3rvc";
 
-    private Connection connection;
+    // Constantes com as credenciais
+    private static final String url = "jdbc:postgresql://ep-late-unit-ac2y5sui.sa-east-1.aws.neon.tech:5432/neondb?sslmode=require";
+    private static final String usuario = "neondb_owner";
+    private static final String senha = "npg_eMyZ8gPD3rvc";
 
-    public Connection getConnection() {
-        System.out.println("Conectando no banco de dados....");
-        try {
-            connection = DriverManager.getConnection(url, usuario, senha);
-            if (connection != null) {
-                System.out.println("Conectado com sucesso!");
-                return connection;
-            } else {
-                System.out.println("Não foi possível conectar!");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Problemas no Driver ou senha incorreta do banco");
-            e.printStackTrace();
-        }
-        return connection;
+    /**
+     * Fabrica e retorna uma nova conexão com o banco de dados.
+     * O 'throws SQLException' avisa para a classe Main que ela deve tratar o erro caso a senha ou a internet falhem.
+     */
+    public static Connection getConnection() throws SQLException {
+        
+        System.out.println("\n[DB] Iniciando tentativa de conexao com o banco de dados...");
+        
+        // O DriverManager tenta conectar. Se falhar, ele lança a SQLException automaticamente.
+        // Se passar desta linha, é porque conectou com sucesso absoluto.
+        Connection conexaoNova = DriverManager.getConnection(url, usuario, senha);
+        
+        System.out.println("[DB] Conectado com sucesso ao banco de dados!");
+        
+        return conexaoNova;
     }
 }
