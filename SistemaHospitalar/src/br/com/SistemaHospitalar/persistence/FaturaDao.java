@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import br.com.SistemaHospitalar.classes.Fatura;
 import br.com.SistemaHospitalar.conexao.ConnectionFactory;
+import br.com.SistemaHospitalar.enums.StatusFatura;
 import br.com.SistemaHospitalar.exception.FaturaNaoEncontradaException;
 
 public class FaturaDao {
@@ -21,7 +22,7 @@ public class FaturaDao {
     public Fatura buscarPorNumero(int idFatura) throws FaturaNaoEncontradaException {
         
         String sql = "SELECT id_fatura, valor_fatura, status_pagamento FROM sistema_hospitalar.fatura WHERE id_fatura = ?";
-        Fatura fatura = new Fatura(idFatura, null, null, null, null, sql, null);
+        Fatura fatura = new Fatura(idFatura, null, null, null, null, null, null);
 
         try  {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -30,12 +31,12 @@ public class FaturaDao {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                fatura = new Fatura(idFatura, null, null, null, null, sql, null);
+                fatura = new Fatura(idFatura, null, null, null, null, null, null);
                 fatura.setId(rs.getInt("id_fatura"));
                 
                 fatura.setValor_fatura(rs.getBigDecimal("valor_fatura"));
                 
-                fatura.setForma_pagamento(rs.getString("status_pagamento"));
+                fatura.setStatusFatura(StatusFatura.converterDoBanco(rs.getString("status_pagamento")));
                 
             } else {
                 throw new FaturaNaoEncontradaException("Fatura inexistente.");

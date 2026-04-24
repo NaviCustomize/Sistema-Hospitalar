@@ -91,7 +91,4 @@ public class Fatura {
 	public void setStatusFatura(StatusFatura statusFatura) {
 		this.statusFatura = statusFatura;
 	}
-
-	
-
 }
