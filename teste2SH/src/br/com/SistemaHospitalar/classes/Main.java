@@ -1,13 +1,18 @@
 package br.com.SistemaHospitalar.classes;
 
+
+import java.security.Provider.Service;
+
 import java.util.Scanner;
+
+import br.com.SistemaHospitalar.services.GerenciadorFiscal;
 
 public class Main {
 	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		
+		GerenciadorFiscal gf = new GerenciadorFiscal();
 		
 		System.out.println("--------------Sistema de Gestão Hospitalar, Geração de NF-------------------");
 	
@@ -25,8 +30,8 @@ public class Main {
 					
 					case 1:
 						System.out.println("Infome o numero da fatura: ");
-						Integer id_fatura = Integer.parseInt(sc.nextLine());
-						NotaFiscal nf = services.exportarCSV(id_fatura);
+						String id_fatura = sc.nextLine();
+						NotaFiscal nf = gf.exportarCSV(id_fatura);
 						break;
 					case 2:
 						

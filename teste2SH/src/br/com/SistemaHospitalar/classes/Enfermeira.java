@@ -3,13 +3,13 @@ package br.com.SistemaHospitalar.classes;
 import br.com.SistemaHospitalar.enums.Turno;
 
 public class Enfermeira {
-    private Integer id;
+    private Long id;
     private Ala ala;
     private String cre;
     private Turno enfermeiraTurno;
     private String nome_enfermeira;
 
-    public Enfermeira(Integer id, Ala ala, String cre, Turno enfermeiraTurno,
+    public Enfermeira(Long id, Ala ala, String cre, Turno enfermeiraTurno,
             String nome_enfermeira) {
         this.id = id;
         this.ala = ala;
@@ -24,7 +24,7 @@ public class Enfermeira {
                 + ", enfermeiraTurno=" + enfermeiraTurno + ", nome_enfermeira=" + nome_enfermeira + "]";
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

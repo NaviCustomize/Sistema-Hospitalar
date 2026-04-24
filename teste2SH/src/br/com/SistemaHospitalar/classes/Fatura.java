@@ -7,61 +7,61 @@ import br.com.SistemaHospitalar.enums.StatusFatura;
 
 public class Fatura {
 	
-	private Integer id;
-	private Paciente paciente;
-	private BigDecimal valor_fatura;
-	private LocalDate data_emissao;
-	private LocalDate data_vencimento;
-	private String forma_pagamento;
+	private Long id;
+	private Integer idPaciente;
+	private BigDecimal valorFatura;
+	private LocalDate dataEmissao;
+	private LocalDate dataVencimento;
+	private String formaPagamento;
 	private StatusFatura statusFatura;
 	
-	public Fatura(Integer id, Paciente paciente, BigDecimal valor_fatura, LocalDate data_emissao,
-			LocalDate data_vencimento, String forma_pagamento, StatusFatura statusFatura) {
+	public Fatura(Long id, Integer idPaciente, BigDecimal valorFatura, LocalDate dataEmissao,
+			LocalDate dataVencimento, String formaPagamento, StatusFatura statusFatura) {
 		super();
 		this.id = id;
-		this.paciente = paciente;
-		this.valor_fatura = valor_fatura;
-		this.data_emissao = data_emissao;
-		this.data_vencimento = data_vencimento;
-		this.forma_pagamento = forma_pagamento;
+		this.idPaciente = idPaciente;
+		this.valorFatura = valorFatura;
+		this.dataEmissao = dataEmissao;
+		this.dataVencimento = dataVencimento;
+		this.formaPagamento = formaPagamento;
 		this.statusFatura = statusFatura;
 	}
 
-	public Integer getId() {
+    @Override
+    public String toString() {
+        return "Nº " + this.id + " | Status: " + this.statusFatura + "\n" +
+               "Paciente ID     : " + this.idPaciente + "\n" +
+               "Data de Emissão: " + this.dataEmissao + " | Vencimento: " + this.dataVencimento + "\n" +
+               "Valor da Fatura: R$ " + this.valorFatura + "\n" +
+               "Forma de Pagt. : " + this.formaPagamento;
+    }
+
+	public Long getId() {
 		return id;
 	}
 
-	public Paciente getPaciente() {
-		return paciente;
+	public Integer getPaciente() {
+		return idPaciente;
 	}
 
 	public BigDecimal getValor_fatura() {
-		return valor_fatura;
+		return valorFatura;
 	}
 
 	public LocalDate getData_emissao() {
-		return data_emissao;
+		return dataEmissao;
 	}
 
 	public LocalDate getData_vencimento() {
-		return data_vencimento;
+		return dataVencimento;
 	}
 
 	public String getForma_pagamento() {
-		return forma_pagamento;
+		return formaPagamento;
 	}
 
 	public StatusFatura getStatusFatura() {
 		return statusFatura;
 	}
 
-	@Override
-	public String toString() {
-		return "Fatura [id=" + id + ", paciente=" + paciente + ", valor_fatura=" + valor_fatura + ", data_emissao="
-				+ data_emissao + ", data_vencimento=" + data_vencimento + ", forma_pagamento=" + forma_pagamento
-				+ ", statusFatura=" + statusFatura + "]";
-	}
-	
-	
-	
 }

@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 
 public class Internacao {
 	
-	private Integer id;
+	private Long id;
 	private Paciente paciente;
 	private Leito leito;
 	private LocalDateTime data_entrada;
 	private LocalDateTime data_saida;
 	
-	public Internacao(Integer id, Paciente paciente, Leito leito, LocalDateTime data_entrada,
+	public Internacao(Long id, Paciente paciente, Leito leito, LocalDateTime data_entrada,
 			LocalDateTime data_saida) {
 		super();
 		this.id = id;
@@ -20,7 +20,7 @@ public class Internacao {
 		this.data_saida = data_saida;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

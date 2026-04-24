@@ -2,12 +2,12 @@ package br.com.SistemaHospitalar.classes;
 
 public class Prescricao {
 	
-	private Integer id;
+	private Long id;
 	private Atendimento atendimento;
 	private Medicamento medicamento;
 	private String observacao;
 	
-	public Prescricao(Integer id, Atendimento atendimento, Medicamento medicamento, String observacao) {
+	public Prescricao(Long id, Atendimento atendimento, Medicamento medicamento, String observacao) {
 		super();
 		this.id = id;
 		this.atendimento = atendimento;
@@ -15,7 +15,7 @@ public class Prescricao {
 		this.observacao = observacao;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

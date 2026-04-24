@@ -8,7 +8,7 @@ import br.com.SistemaHospitalar.enums.TipoAtendimento;
 
 public class Atendimento {
 	
-	private Integer id;
+	private Long id;
 	private Paciente paciente;
 	private Medico medico;
 	private LocalDateTime data_hora;
@@ -18,7 +18,7 @@ public class Atendimento {
 	private BigDecimal valor_atendimento;
 	private BigDecimal valor_internacao;
 	
-	public Atendimento(Integer id, Paciente paciente, Medico medico, LocalDateTime data_hora,
+	public Atendimento(Long id, Paciente paciente, Medico medico, LocalDateTime data_hora,
 			TipoAtendimento tipoAtendimento, StatusAtendimento statusAtendimento, String observacoes_clinicas,
 			BigDecimal valor_atendimento, BigDecimal valor_internacao) {
 		super();
@@ -33,7 +33,7 @@ public class Atendimento {
 		this.valor_internacao = valor_internacao;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

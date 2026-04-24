@@ -5,12 +5,12 @@ import br.com.SistemaHospitalar.enums.TipoLaboratorio;
 
 public class Laboratorio {
 	
-	private Integer id;
+	private Long id;
 	private Exame exame;
 	private String nome_laboratorio;
 	private TipoLaboratorio tipoLaboratorio;
 	
-	public Laboratorio(Integer id, Exame exame, String nome_laboratorio, TipoLaboratorio tipoLaboratorio) {
+	public Laboratorio(Long id, Exame exame, String nome_laboratorio, TipoLaboratorio tipoLaboratorio) {
 		super();
 		this.id = id;
 		this.exame = exame;
@@ -18,11 +18,11 @@ public class Laboratorio {
 		this.tipoLaboratorio = tipoLaboratorio;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

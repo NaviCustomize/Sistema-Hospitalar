@@ -2,18 +2,18 @@ package br.com.SistemaHospitalar.classes;
 
 public class Laudo {
 	
-	private Integer id;
+	private Long id;
 	private Laboratorio laboratorio;
 	private String arquivo_referencia;
 	
-	public Laudo(Integer id, Laboratorio laboratorio, String arquivo_referencia) {
+	public Laudo(Long id, Laboratorio laboratorio, String arquivo_referencia) {
 		super();
 		this.id = id;
 		this.laboratorio = laboratorio;
 		this.arquivo_referencia = arquivo_referencia;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

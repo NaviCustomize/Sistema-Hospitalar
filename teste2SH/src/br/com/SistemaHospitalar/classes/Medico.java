@@ -1,12 +1,12 @@
 package br.com.SistemaHospitalar.classes;
 
 public class Medico {
-    private Integer id;
+    private Long id;
     private String nome;
     private String especialidade;
     private String CRM;
 
-    public Medico(Integer id, String nome, String especialidade, String crm) {
+    public Medico(Long id, String nome, String especialidade, String crm) {
         this.id = id;
         this.nome = nome;
         this.especialidade = especialidade;
@@ -18,7 +18,7 @@ public class Medico {
         return "Medico id = " + id + ", nome = " + nome + ", especialidade = " + especialidade + ", crm = " + CRM;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

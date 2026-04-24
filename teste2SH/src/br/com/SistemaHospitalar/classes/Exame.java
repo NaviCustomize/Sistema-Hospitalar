@@ -8,7 +8,7 @@ import br.com.SistemaHospitalar.enums.TipoExame;
 
 public class Exame {
 	
-	private Integer id;
+	private Long id;
 	private Medico medico;
 	private Atendimento atendimento;
 	private LocalDate data_solicitacao;
@@ -18,7 +18,7 @@ public class Exame {
 	private LocalDate data_resultado;
 	private String descricao;
 	
-	public Exame(Integer id, Medico medico, Atendimento atendimento, LocalDate data_solicitacao, TipoExame tipoExame,
+	public Exame(Long id, Medico medico, Atendimento atendimento, LocalDate data_solicitacao, TipoExame tipoExame,
 			BigDecimal valorExame, Resultado resultado, LocalDate data_resultado, String descricao) {
 		super();
 		this.id = id;
@@ -32,7 +32,7 @@ public class Exame {
 		this.descricao = descricao;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

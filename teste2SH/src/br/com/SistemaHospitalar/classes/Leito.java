@@ -3,10 +3,16 @@ package br.com.SistemaHospitalar.classes;
 import br.com.SistemaHospitalar.enums.StatusLeito;
 
 public class Leito {
-    private Integer id;
+    private Long id;
     private StatusLeito statusLeito;
     private Ala ala;
-    public Integer getId() {
+
+    @Override
+    public String toString() {
+        return "Leito [id=" + id + ", statusLeito=" + statusLeito + ", ala=" + ala + "]";
+    }
+
+    public Long getId() {
         return id;
     }
     public StatusLeito getStatusLeito() {
@@ -15,6 +21,5 @@ public class Leito {
     public Ala getAla() {
         return ala;
     }
-
-    
+ 
 }

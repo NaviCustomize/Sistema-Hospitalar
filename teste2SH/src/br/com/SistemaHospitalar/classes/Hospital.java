@@ -1,14 +1,14 @@
 package br.com.SistemaHospitalar.classes;
 
 public class Hospital {
-    private Integer id;
+    private Long id;
     private String cnpj;
     private String nome_hospital;
     private Integer telefone;
     private String email;
     private String endereco;
 
-    public Hospital(Integer id, String cnpj, String nome_hospital, Integer telefone, String email, String endereco) {
+    public Hospital(Long id, String cnpj, String nome_hospital, Integer telefone, String email, String endereco) {
         this.id = id;
         this.cnpj = cnpj;
         this.nome_hospital = nome_hospital;
@@ -23,7 +23,7 @@ public class Hospital {
                 + ", email=" + email + ", endereco=" + endereco;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

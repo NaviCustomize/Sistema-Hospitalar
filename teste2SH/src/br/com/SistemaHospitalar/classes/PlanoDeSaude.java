@@ -4,12 +4,12 @@ import br.com.SistemaHospitalar.enums.Cobertura;
 
 public class PlanoDeSaude {
 	
-	private Integer id;
+	private Long id;
 	private String nome_convenio;
 	private String telefone;
 	private Cobertura cobertura;
 	
-	public PlanoDeSaude(Integer id, String nome_convenio, String telefone, Cobertura cobertura) {
+	public PlanoDeSaude(Long id, String nome_convenio, String telefone, Cobertura cobertura) {
 		super();
 		this.id = id;
 		this.nome_convenio = nome_convenio;
@@ -17,7 +17,7 @@ public class PlanoDeSaude {
 		this.cobertura = cobertura;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

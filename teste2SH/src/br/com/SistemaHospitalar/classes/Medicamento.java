@@ -4,12 +4,12 @@ import java.math.BigDecimal;
 
 public class Medicamento {
 	
-	private Integer id;
+	private Long id;
 	private String nome_medicamento;
 	private BigDecimal dosagem;
 	private Integer quantidade;
 	
-	public Medicamento(Integer id, String nome_medicamento, BigDecimal dosagem, Integer quantidade) {
+	public Medicamento(Long id, String nome_medicamento, BigDecimal dosagem, Integer quantidade) {
 		super();
 		this.id = id;
 		this.nome_medicamento = nome_medicamento;
@@ -17,7 +17,7 @@ public class Medicamento {
 		this.quantidade = quantidade;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 public class Credenciamento {
 	
-	private Integer id;
+	private Long id;
 	private Hospital hospital;
 	private PlanoDeSaude planodeSaude;
 	private LocalDate data_credenciamento;
 	
-	public Credenciamento(Integer id, Hospital hospital, PlanoDeSaude planodeSaude, LocalDate data_credenciamento) {
+	public Credenciamento(Long id, Hospital hospital, PlanoDeSaude planodeSaude, LocalDate data_credenciamento) {
 		super();
 		this.id = id;
 		this.hospital = hospital;
@@ -17,7 +17,7 @@ public class Credenciamento {
 		this.data_credenciamento = data_credenciamento;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 

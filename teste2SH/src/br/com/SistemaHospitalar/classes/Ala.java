@@ -5,17 +5,17 @@ import java.util.List;
 import br.com.SistemaHospitalar.enums.TipoAla;
 
 public class Ala {
-    private Integer id;
+    private Long id;
     private TipoAla tipo_ala;
     private List<Leito> leitos;
     private Hospital hospital;
-    public Ala(Integer id, TipoAla tipo_ala, List<Leito> leitos, Hospital hospital) {
+    public Ala(Long id, TipoAla tipo_ala, List<Leito> leitos, Hospital hospital) {
         this.id = id;
         this.tipo_ala = tipo_ala;
         this.leitos = leitos;
         this.hospital = hospital;
     }
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
     public TipoAla getTipo_ala() {
